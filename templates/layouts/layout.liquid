@@ -1,26 +1,28 @@
 <html ng-app="app">
 <head>
     {{ "style.css" | asset_url | stylesheet_tag }}
-
-    {{ "libs/angular-1.2.0.min.js" | asset_url | script_tag }}
-
-    <!-- <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>-->
-
-    <!-- Some Libraries, uncomment these if you need them. -->
-    <!-- {{ "libs/ngStorage.min.js" | asset_url | script_tag }} -->
-    <!--    <script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script> -->
-    <!--    <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.js"></script> -->
-    <!-- {{ "libs/angular-touch.min.js" | asset_url | script_tag }} -->
-    
-    {{ "app.js" | asset_url | script_tag }}
-
-	<meta name="viewport" content="width=device-width">
-	<title>Angular App</title>
-
+    <meta name="viewport" content="width=device-width">
+    <title>Angular App</title>
 </head>
 <body>
-{% block content %}
+<div ng-view>
+</div>
 
-{% endblock %}
+{{ "libs/angular-1.2.14.min.js" | asset_url | script_tag }}
+
+<!-- Some Libraries, uncomment these if you need them.
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+    {{ "libs/ngStorage.min.js" | asset_url | script_tag }}
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
+    {{ "libs/angular-touch.min.js" | asset_url | script_tag }}
+    -->
+
+{{ "libs/angular-route.js" | asset_url | script_tag }}
+{{ "app/controllers.js" | asset_url | script_tag }}
+{{ "app/services.js" | asset_url | script_tag }}
+{{ "app/directives.js" | asset_url | script_tag }}
+{{ "app/filters.js" | asset_url | script_tag }}
+{{ "app.js" | asset_url | script_tag }}
+
 </body>
 </html>
